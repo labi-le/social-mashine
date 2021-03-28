@@ -1,0 +1,24 @@
+{
+    "name": "labile/social-mashine",
+    "description": "social mashine for social network",
+    "type": "library",
+    "require": {
+        "php": "^8.0",
+        "atehnix/vk-client": "^1.4"
+    },
+
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "labile",
+            "email": "1a6i1e@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+
+    "autoload": {
+        "psr-4": {
+            "labile\\PublicRelations\\": "src"
+        }
+    }
+}
