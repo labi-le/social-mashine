@@ -22,45 +22,46 @@ ___
 #### 2. Методы
 
 ```php
-    /**
-     * Установить текст
-     * @param string $item
-     * @return static
-     */
-    public function setText(string $item): static;
+/**
+ * Установить текст
+ * @param string $item
+ * @return static
+ */
+public function setText(string $item): static;
 
-    /**
-     * Установить вложения
-     * @param string ...$item
-     * @return static
-     */
-    public function setAttachment(string ...$item): static;
+/**
+ * Установить вложения
+ * @param string ...$item
+ * @return static
+ */
+public function setAttachment(string ...$item): static;
 
-    /**
-     * Отправить объект получателю\получателям
-     * @param int ...$recipient
-     * @return array
-     */
-    public function send(int ...$recipient): array;
+/**
+ * Отправить объект получателю\получателям
+ * @param int ...$recipient
+ * @return array
+ */
+public function send(int ...$recipient): array;
 ```
 #### 3. Примеры
 
 ###### 3.1 Отправка поста на стену ВКонтакте
 
 ```php
-         /** Токен */
-        $access_token = '';
+/** Токен */
+$access_token = '';
 
-         /** Версия vk api */
-        $v = '5.130';
+/** Версия vk api */
+$v = '5.130';
 
-        $socialMashine = new VK($access_token, $v);
-        $socialMashine
-            /** Текст */
-            ->setText('Хола бола!')
-            /** Вложения */
-            ->setAttachment('photo-203359167_457239017', 'photo259166248_457277920', 'photo-203359167_457239017')
-            /** Идентификатор группы\страницы с открытой стеной*/
-            ->send(-203359167);
+$socialMashine = new VK($access_token, $v);
+
+$socialMashine
+    /** Текст */
+    ->setText('Хола бола!')
+    /** Вложения */
+    ->setAttachment('photo-203359167_457239017', 'photo259166248_457277920', 'photo-203359167_457239017')
+    /** Идентификатор группы\страницы с открытой стеной*/
+    ->send(-203359167);
 ```
 
